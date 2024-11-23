@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'Pages/Login.dart';
+import 'Pages/Home.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,142 +17,13 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      home: const MyHomePage(),
+      routes:{
+        "/": (context)=>Login(),
+        "/home":(context)=>Home()
+      }
+      
     ));
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  const MyHomePage({super.key});
 
-  @override
-  State<StatefulWidget> createState() => Homepage_state();
-}
-
-class Homepage_state extends State<MyHomePage> {
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-            title: const Center(child: Text('Manan Vyas')),
-            backgroundColor: const Color(0xffffc2ce)),
-        body: Container(
-          width: double.infinity,
-          height: double.infinity,
-          decoration: const BoxDecoration(
-              gradient: LinearGradient(
-                  colors: [Color(0xffa8edea), Color(0xfffed6e3)],
-                  end: FractionalOffset(.5, 0),
-                  begin: FractionalOffset(.5, 1))),
-          child: Center(
-            child: Column(children: [
-              const SizedBox(
-                width: double.infinity,
-                height: 40,
-              ),
-              const Text("Hello Again !",
-                  style: TextStyle(
-                      fontSize: 40,
-                      color: Colors.black87,
-                      fontWeight: FontWeight.bold)),
-              const SizedBox(
-                width: double.infinity,
-                height: 30,
-              ),
-              const Text('Welcome Back',
-                  style: TextStyle(
-                      fontSize: 30,
-                      fontFamily: 'apple',
-                      color: Colors.black87)),
-              const Text('It Felt Lonely Without You.',
-                  style: TextStyle(
-                      fontSize: 22,
-                      fontFamily: 'regular',
-                      color: Colors.black87)),
-              const SizedBox(height: 80),
-              SizedBox(
-                width: 350,
-                child: TextField(
-                  decoration: InputDecoration(
-                      suffixIcon: const Icon(Icons.email),
-                      labelText: 'Enter Email',
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(10),
-                          borderSide:
-                              const BorderSide(color: Colors.grey, width: 2))),
-                ),
-              ),
-              const SizedBox(height: 20),
-              SizedBox(
-                  width: 350,
-                  child: TextField(
-                    decoration: InputDecoration(
-                        labelText: 'Enter Password',
-                        suffixIcon: const Icon(Icons.lock_open),
-                        enabledBorder: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(10))),
-                  )),
-              const SizedBox(height: 40),
-              SizedBox(
-                  height: 70,
-                  width: 250,
-                  child: ElevatedButton(
-                      onPressed: () {},
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.pink.shade400,
-                        foregroundColor: Colors.white,
-                      ),
-                      child: const Text(
-                        "Login",
-                        style: TextStyle(fontSize: 25),
-                      ))),
-              const SizedBox(
-                height: 30,
-              ),
-              const Text("------ or continue with ------"),
-              const SizedBox(
-                height: 30,
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    SizedBox(
-                        height: 70,
-                        width: 70,
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.black87),
-                          child: const FaIcon(FontAwesomeIcons.google,
-                              color: Colors.white),
-                        )),
-                    SizedBox(
-                        height: 70,
-                        width: 70,
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.black87),
-                          child: const FaIcon(FontAwesomeIcons.facebook,
-                              color: Colors.white),
-                        )),
-                    SizedBox(
-                        height: 70,
-                        width: 70,
-                        child: ElevatedButton(
-                          onPressed: () {},
-                          style: ElevatedButton.styleFrom(
-                              backgroundColor: Colors.black87),
-                          child: const FaIcon(FontAwesomeIcons.github,
-                              color: Colors.white),
-                        )),
-                  ],
-                ),
-              ),
-            ]),
-          ),
-        ));
-  }
-}
