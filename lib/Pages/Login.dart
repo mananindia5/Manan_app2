@@ -1,12 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class Login extends StatelessWidget {
+class Login extends StatefulWidget {
+  const Login({super.key});
+
+  @override
+  State<Login> createState() => _LoginState();
+}
+
+class _LoginState extends State<Login> {
+   String name=""; 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-            title: const Center(child: Text('Manan Vyas')),
+            title: const Center(child: Text('AyuCure')),
             backgroundColor: const Color(0xffffc2ce)),
         body: Container(
           width: double.infinity,
@@ -22,7 +30,8 @@ class Login extends StatelessWidget {
                 width: double.infinity,
                 height: 40,
               ),
-              const Text("Hello Again !",
+              
+              const Text("AyuCure",
                   style: TextStyle(
                       fontSize: 40,
                       color: Colors.black87,
@@ -31,7 +40,8 @@ class Login extends StatelessWidget {
                 width: double.infinity,
                 height: 30,
               ),
-              const Text('Welcome Back',
+              Image.asset("assets/img/Logos/AyuCureLogo.jpg",fit: BoxFit.cover),
+               Text('Welcome $name',
                   style: TextStyle(
                       fontSize: 30,
                       fontFamily: 'apple',
@@ -45,9 +55,12 @@ class Login extends StatelessWidget {
               SizedBox(
                 width: 350,
                 child: TextField(
+                  onChanged: (value) =>setState(() {
+                     name=value;
+                  }),
                   decoration: InputDecoration(
                       suffixIcon: const Icon(Icons.email),
-                      labelText: 'Enter Email',
+                      labelText: 'Enter Name',
                       enabledBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(10),
                           borderSide:
