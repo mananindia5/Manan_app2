@@ -18,8 +18,8 @@ class MyApp extends StatelessWidget {
         primarySwatch: Colors.blueGrey,
       ),
       routes:{
-        "/": (context)=>Login(),
-        "/home":(context)=>Home()
+        "/": (context)=>Home(),
+        "/home":(context)=>Login()
       }
       
     ));
